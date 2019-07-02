@@ -1,0 +1,12 @@
+<ion-content>
+  <ion-list *ngFor="let company of consolesService.getCompanies().sort()">
+    <ion-list-header>{{company}}</ion-list-header>
+    <ion-item *ngFor="let console of consolesService.getConsoles(company)" [routerLink]="console.short">
+      <img src="../../assets/images/consoles/{{console.short}}.gif" slot="start">
+      <ion-label>
+        <h3>{{console.name}}</h3>
+        <p>{{console.collectCount ? console.collectCount : 0}} / {{console.gameCount ? console.gameCount : 0}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

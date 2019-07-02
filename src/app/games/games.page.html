@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{console.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="games$ | async as games">
+    <ion-item *ngFor="let game of games" [routerLink]="console.short">
+      <!-- <img src="../../assets/images/consoles/{{console.short}}.gif" slot="start"> -->
+      <ion-label>
+        <h3>{{game.name}}</h3>
+        <p>{{console.collectCount ? console.collectCount : 0}} / {{console.gameCount ? console.gameCount : 0}}</p>
+      </ion-label>
+      <ion-toggle slot="end">
+        X
+      </ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>
