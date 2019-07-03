@@ -1,4 +1,3 @@
-import { Console } from './../interfaces/console';
 import { ConsolesService } from './../services/consoles.service';
 import { Component, OnInit } from '@angular/core';
 

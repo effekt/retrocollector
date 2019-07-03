@@ -6,5 +6,6 @@ export interface Console {
     day?: number;
     gameCount: number;
     collectCount: number;
+    selected: number[];
     short: string;
 }

@@ -42,4 +42,16 @@ export class GamesPage implements OnInit {
     return this.gameCovers[game._id];
   }
 
+  private changeSelected(game: Game, event): void {
+    if (event.detail.checked) {
+      this.consolesService.addGameToSelected(this.console, game);
+    } else {
+      this.consolesService.removeGameFromSelected(this.console, game);
+    }
+  }
+
+  private gameSelected(game: Game): boolean {
+    return this.console.selected.indexOf(game._id) > -1;
+  }
+
 }

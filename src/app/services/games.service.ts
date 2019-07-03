@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 import { Game } from '../interfaces/game';
 import { Observable } from 'rxjs'
 import { HttpClient } from '@angular/common/http';
-import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
