@@ -1,6 +1,6 @@
+import { FileService } from './file.service';
 import { Console } from './../interfaces/console';
 import { Injectable } from '@angular/core';
-import { File } from '@ionic-native/file/ngx';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +14,8 @@ export class ConsolesService {
     { "name": "Sega Genesis", "short": "genesis", "company": "Sega", "year": 1980, "collectCount": 0, "gameCount": 0 },
   ]
 
-  constructor(private file: File) {
-    console.log(this.file.dataDirectory);
+  constructor(private file: FileService) {
+    
   }
 
   public getConsole(console: string): Console {

@@ -1,6 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
 import { File } from '@ionic-native/file/ngx';
-import { ConsolesService } from './services/consoles.service';
 import { IonicStorageModule } from '@ionic/storage';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -28,7 +27,6 @@ import { AppRoutingModule } from './app-routing.module';
   providers: [
     StatusBar,
     SplashScreen,
-    ConsolesService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     File
   ],

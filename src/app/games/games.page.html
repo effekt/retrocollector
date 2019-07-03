@@ -6,15 +6,16 @@
 
 <ion-content>
   <ion-list *ngIf="games$ | async as games">
-    <ion-item *ngFor="let game of games" [routerLink]="console.short">
-      <!-- <img src="../../assets/images/consoles/{{console.short}}.gif" slot="start"> -->
-      <ion-label>
-        <h3>{{game.name}}</h3>
-        <p>{{console.collectCount ? console.collectCount : 0}} / {{console.gameCount ? console.gameCount : 0}}</p>
-      </ion-label>
-      <ion-toggle slot="end">
-        X
-      </ion-toggle>
-    </ion-item>
+    <ion-virtual-scroll [items]="games" approxItemHeight="56px">
+      <ion-item *virtualItem="let game">
+        <ion-avatar slot="start">
+          <img src='/assets/images/covers/{{console.short}}/{{game.name}}.jpg' onerror="this.src = '/assets/images/consoles/N64_cartB01.gif'">
+        </ion-avatar>
+        <ion-label>
+          <h3>{{game.name}}</h3>
+        </ion-label>
+        <ion-toggle slot="end"></ion-toggle>
+      </ion-item>
+    </ion-virtual-scroll>
   </ion-list>
 </ion-content>
